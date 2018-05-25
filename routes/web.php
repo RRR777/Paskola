@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'CreditController@create');
+Route::post('/payments', 'CreditController@store');
