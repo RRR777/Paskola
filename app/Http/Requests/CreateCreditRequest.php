@@ -34,8 +34,9 @@ class CreateCreditRequest extends FormRequest
     {
         return [
             'interestRate.required' => 'Įveskite Metinių palūkanų normą.',
-            'interestRate.numeric' => 'Palūkanų normą įveskite skaitčiais.',
+            'interestRate.numeric' => 'Palūkanų normą įveskite skaičiais.',
             'interestRate.min' => 'Palūkanų norma turi būti teigiama',
+            'interestRate.max' => 'Palūkanų norma negali būti didesnė kaip 30',
             'paymentsNumber.required' => 'Įveskite paskolos trukmę mėnesiais.',
             'paymentsNumber.numeric' => 'Paskolos trukmę mėnesiais įveskite skaičiais.',
             'paymentsNumber.min' => 'Paskolos trukmė turi būti teigiama',

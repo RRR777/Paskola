@@ -13,7 +13,7 @@
                         class="btn btn-info float-right">
                         Grįžti į skaičiuoklę
                     </button>
-                    <button type="button" name="file" class="btn btn-info" >
+                    <button type="button" name="file" class="btn btn-info float-right">
                         <a href="payments.csv">Parsisiųsti mokėjimų .csv failą</a></button>
                 </div>
                 <div class="card-body">

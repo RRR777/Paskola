@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/home', 'CreditController@create');
+Route::get('/home', 'CreditController@index');
 Route::post('/payments', 'CreditController@store');

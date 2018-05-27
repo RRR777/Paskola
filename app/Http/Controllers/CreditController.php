@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateCreditRequest;
+use App\Http\Requests\CreateNewInterestRequest;
 use App\Credit;
 use Carbon\Carbon;
 
 class CreditController extends Controller
 {
-    public function create()
+    public function index()
     {
         return view('home');
     }
@@ -23,10 +24,12 @@ class CreditController extends Controller
         $credit->interestMonthly = Credit::interestToMonth($credit->interestRate);
         $credit->annuityCoefficient = Credit::annuityCoefficientCount(
             $credit->interestMonthly, 
-            $credit->paymentsNumber);
+            $credit->paymentsNumber
+        );
         $credit->totalPaymentPerMonth = Credit::totalPaymentPerMonthCount(
             $credit->annuityCoefficient,
-            $credit->creditAmount);
+            $credit->creditAmount
+        );
 
         $paymentsData = Credit::annuityCreditCount($credit);
 
@@ -38,7 +41,7 @@ class CreditController extends Controller
     public function writeToFile($data)
     {
         $file = fopen('payments.csv', 'w');
-        foreach($data as $line){
+        foreach ($data as $line) {
             fputcsv($file, $line, '|');
         }
         fclose($file);

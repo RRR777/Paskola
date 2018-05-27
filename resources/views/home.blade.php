@@ -70,6 +70,7 @@
                                 </div>
                                 <div class="col-md-8 mb-9">
                                     <input type="number"
+                                        step="any"
                                         min="1"
                                         class="form-control"
                                         value="{{ old('interestRate') }}"
