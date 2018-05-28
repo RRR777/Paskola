@@ -46,10 +46,10 @@ class Credit extends Model
         $principalPayment = 0;
         $remainingAmount = $credit->creditAmount;
 
-        for ($i=1; $i <= $credit->paymentsNumber; $i++){
-            if ($i < $credit->paymentsNumber){
+        for ($i=1; $i <= $credit->paymentsNumber; $i++) {
+            if ($i < $credit->paymentsNumber) {
                 $remainingAmount -= $principalPayment;
-                $interestPayment = round(($credit->interestMonthly * $remainingAmount),2);
+                $interestPayment = round(($credit->interestMonthly * $remainingAmount), 2);
                 $principalPayment = $credit->totalPaymentPerMonth - $interestPayment;
                 $credit->paymentDate = Carbon::parse($credit->paymentDate)->addMonths(1);
                 
@@ -65,7 +65,7 @@ class Credit extends Model
 
             } else if ($i = $credit->paymentsNumber) {
                 $remainingAmount -= $principalPayment;
-                $interestPayment = round(($credit->interestMonthly * $remainingAmount),2);
+                $interestPayment = round(($credit->interestMonthly * $remainingAmount), 2);
                 $principalPayment = $remainingAmount;
                 $credit->totalPaymentPerMonth = $principalPayment + $interestPayment;
                 $credit->paymentDate = Carbon::parse($credit->paymentDate)->addMonths(1);
