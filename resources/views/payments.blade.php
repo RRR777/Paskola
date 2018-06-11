@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2>Paskolos Anuitetiniu metodu mokėjimų grafikas</h2>
-                    <button onclick='location.href="{{url('/home')}}"'
+                    <button onclick='location.href="{{ url('/home') }}"'
                         type="button"
                         class="btn btn-info float-right">
                         Grįžti į skaičiuoklę

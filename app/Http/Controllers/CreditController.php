@@ -14,6 +14,7 @@ class CreditController extends Controller
     {
         return view('home');
     }
+
     public function store(CreateCreditRequest $request)
     {
         $credit = new Credit;
@@ -23,7 +24,7 @@ class CreditController extends Controller
         $credit->paymentsNumber = $request->input('paymentsNumber');
         $credit->interestMonthly = Credit::interestToMonth($credit->interestRate);
         $credit->annuityCoefficient = Credit::annuityCoefficientCount(
-            $credit->interestMonthly, 
+            $credit->interestMonthly,
             $credit->paymentsNumber
         );
         $credit->totalPaymentPerMonth = Credit::totalPaymentPerMonthCount(
