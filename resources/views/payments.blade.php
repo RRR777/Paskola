@@ -7,14 +7,17 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2>Paskolos Anuitetiniu metodu mokėjimų grafikas</h2>
+                    <h2>{{ __('Paskolos Anuitetiniu metodu mokėjimų grafikas') }}</h2>
                     <button onclick='location.href="{{ url('/home') }}"'
                         type="button"
                         class="btn btn-info float-right">
-                        Grįžti į skaičiuoklę
+                        {{ __('Grįžti į skaičiuoklę') }}
                     </button>
                     <button type="button" name="file" class="btn btn-info float-right">
-                        <a href="payments.csv">Parsisiųsti mokėjimų .csv failą</a></button>
+                        <a href="payments.csv">
+                            {{ __('Parsisiųsti mokėjimų .csv failą') }}
+                        </a>
+                    </button>
                 </div>
                 <div class="card-body">
                     @if (session('status'))

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateCreditRequest;
-use App\Http\Requests\CreateNewInterestRequest;
 use App\Credit;
 use Carbon\Carbon;
 

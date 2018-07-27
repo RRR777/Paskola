@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Credit;
 
 class CreateCreditRequest extends FormRequest
 {
@@ -25,8 +26,8 @@ class CreateCreditRequest extends FormRequest
     {
         return [
             'interestRate' => 'required|numeric|min:1|max:30',
-            'paymentsNumber' => 'required|numeric|min:1',
-            'creditAmount' => 'required|numeric|min:1',
+            'paymentsNumber' => 'required|numeric|min:1|max:600',
+            'creditAmount' => 'required|numeric|min:1|max:10000000',
             'paymentDate' => 'required|date'
         ];
     }
@@ -40,9 +41,11 @@ class CreateCreditRequest extends FormRequest
             'paymentsNumber.required' => 'Įveskite paskolos trukmę mėnesiais.',
             'paymentsNumber.numeric' => 'Paskolos trukmę mėnesiais įveskite skaičiais.',
             'paymentsNumber.min' => 'Paskolos trukmė turi būti teigiama',
+            'paymentsNumber.max' => 'Paskolos trukmė negali būti ilgesnė kaip 600',
             'creditAmount.required' => 'Įveskite Paskolos sumą.',
             'creditAmount.numeric' => 'Paskolos sumą įveskite skaičiais.',
             'creditAmount.min' => 'Paskolos suma turi būti teigiama',
+            'creditAmount.max' => 'Paskolos suma negali būti didesnė nei 10.000.000!',
             'paymentDate.required' => 'Įveskite paskolos pradžios datą.',
             'paymentDate.numeric' => 'Paskolos datą įveskite skaičiais.'
          ];

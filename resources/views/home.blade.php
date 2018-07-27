@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h2>Paskolos skaičiuoklė</h2>
-                    <h2>(Anuitetinis metodas)</h2>
+                    <h2>{{ __('Paskolos skaičiuoklė') }}</h2>
+                    <h2>{{ __('(Anuitetinis metodas)') }}</h2>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -18,25 +18,25 @@
                     <div class="container">
                         @include('layouts.errors')
                         <form class="needs-validation"
-                              novalidate
-                              action="{{ url('/payments') }}"
-                              method="post">
+                            novalidate
+                            action="{{ url('/payments') }}"
+                            method="post">
                             {{ csrf_field() }}
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="validationServer01">
-                                        Paskolos Pradžios data:
+                                        {{ __('Paskolos Pradžios data:') }}
                                     </label>
                                 </div>
                                 <div class="col-md-8 mb-9">
                                     <input type="date"
-                                           class="form-control"
-                                           value="{{ old('paymentDate') }}"
-                                           name="paymentDate"
-                                           id="validationServer01"
-                                           required>
+                                        class="form-control"
+                                        value="{{ old('paymentDate') }}"
+                                        name="paymentDate"
+                                        id="validationServer01"
+                                        required>
                                     <div class="invalid-feedback">
-                                        * Įveskite paskolos pradžios datą:!
+                                        {{ __('* Įveskite paskolos pradžios datą!') }}
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                       <label for="validationServer02">
-                                          Paskolos suma:
+                                          {{ __('Paskolos suma:') }}
                                       </label>
                                 </div>
                                 <div class="col-md-8 mb-9">
@@ -57,16 +57,16 @@
                                         placeholder="Įveskite paskolos sumą" 
                                         required>
                                     <div class="invalid-feedback">
-                                        * Įveskite paskolos sumą!
+                                        {{ __('* Įveskite paskolos sumą!') }}
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
-                                      <label for="validationServer03">
-                                          Metinė Palūkanų norma:
-                                      </label>
+                                    <label for="validationServer03">
+                                        {{ __('Metinė Palūkanų norma:') }}
+                                    </label>
                                 </div>
                                 <div class="col-md-8 mb-9">
                                     <input type="number"
@@ -79,16 +79,16 @@
                                         placeholder="Įveskite Metinę palūkanų normą" 
                                         required>
                                     <div class="invalid-feedback">
-                                        * Įveskite palūkanų normą!
+                                        {{ __('* Įveskite palūkanų normą!') }}
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
-                                      <label for="validationServer04">
-                                          Paskolos trukmė mėnesiais:
-                                      </label>
+                                    <label for="validationServer04">
+                                        {{ __('Paskolos trukmė mėnesiais:') }}
+                                    </label>
                                 </div>
                                 <div class="col-md-8 mb-9">
                                     <input type="number"
@@ -100,11 +100,13 @@
                                         placeholder="Įveskite Paskolos trukmę mėnesiais" 
                                         required>
                                     <div class="invalid-feedback">
-                                        * Įveskite Paskolos trukmę mėnesiais!
+                                        {{ __('* Įveskite Paskolos trukmę mėnesiais!') }}
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" name="submit" class="btn btn-info">Skaičiuoti</button>
+                            <button type="submit" name="submit" class="btn btn-info">
+                                {{ __('Skaičiuoti') }}
+                            </button>
                         </form>
                     </div>
                 </div>
